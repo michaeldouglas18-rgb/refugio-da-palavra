@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Refúgio da Palavra: um espaço de fé, acolhimento, orações e esperança em Deus.">
+  <title>Refúgio da Palavra</title>
+  <style>
+    :root {
+      --fundo: #071629;
+      --painel: #102844;
+      --painel-escuro: #030d19;
+      --dourado: #e2c078;
+      --dourado-escuro: #c9a45c;
+      --texto: #f5f1e8;
+      --borda: #344b65;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--fundo);
+      color: var(--texto);
+      line-height: 1.75;
+    }
+    header {
+      padding: 28px 16px;
+      text-align: center;
+      background: #0b1e35;
+      border-bottom: 2px solid var(--dourado-escuro);
+    }
+    header h1 { color: var(--dourado); font-size: clamp(2rem, 5vw, 2.6rem); }
+    header p { color: #e7e0d3; }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 22px;
+      padding: 13px;
+      background: #102844;
+      border-bottom: 1px solid var(--borda);
+    }
+    nav a { color: var(--dourado); text-decoration: none; font-weight: bold; }
+    nav a:hover, nav a:focus { color: white; text-decoration: underline; }
+    .banner {
+      min-height: 350px;
+      padding: 70px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(rgba(3,14,28,.76), rgba(3,14,28,.88)),
+                  radial-gradient(circle, #284b70, var(--fundo));
+    }
+    .banner h2 { color: var(--dourado); font-size: clamp(2rem, 5vw, 2.8rem); margin-bottom: 15px; }
+    .banner p { max-width: 760px; font-size: 1.15rem; }
+    .botao {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 11px 22px;
+      border: 0;
+      border-radius: 5px;
+      background: var(--dourado-escuro);
+      color: var(--fundo);
+      text-decoration: none;
+      font: inherit;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .botao:hover { background: var(--dourado); }
+    .container { width: min(1100px, 90%); margin: auto; padding: 42px 0; }
+    .titulo { color: var(--dourado); text-align: center; font-size: clamp(1.7rem, 4vw, 2rem); margin-bottom: 24px; }
+    .cartoes { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
+    .cartao, .conteudo-texto, .formulario {
+      background: var(--painel);
+      border: 1px solid var(--borda);
+      border-left: 4px solid var(--dourado-escuro);
+      border-radius: 8px;
+      padding: 24px;
+    }
+    .cartao h3, .conteudo-texto h3, .formulario h3 { color: var(--dourado); margin-bottom: 12px; }
+    .cartao p { color: #e8e8e8; }
+    .secao { border-top: 1px solid var(--borda); padding: 42px 0; scroll-margin-top: 70px; }
+    .conteudo-texto p { margin: 10px 0; }
+    .conteudo-texto h4 { color: var(--dourado); margin-top: 20px; }
+    .conteudo-texto ul { padding-left: 22px; margin: 8px 0 14px; }
+    .versiculo { text-align: center; color: var(--dourado); font-size: 1.3rem; font-style: italic; padding: 28px 15px; }
+    .formulario { max-width: 760px; margin: auto; }
+    .formulario label { display: block; margin: 14px 0 6px; font-weight: bold; }
+    .formulario input, .formulario textarea, .formulario select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #71839a;
+      border-radius: 5px;
+      background: #f8f7f3;
+      color: #172333;
+      font: inherit;
+    }
+    .formulario textarea { min-height: 150px; resize: vertical; }
+    .aviso { color: #d8dce3; font-size: .92rem; margin-top: 12px; }
+    footer {
+      background: var(--painel-escuro);
+      text-align: center;
+      padding: 28px 15px;
+      color: #c9c1b4;
+      border-top: 2px solid var(--dourado-escuro);
+    }
+    footer h2 { color: var(--dourado); margin-bottom: 8px; }
+    @media (max-width: 600px) {
+      nav { gap: 8px 14px; }
+      .cartao, .conteudo-texto, .formulario { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Refúgio da Palavra</h1>
+    <p>Acolhimento, fé e esperança em Deus</p>
+  </header>
+
+  <nav aria-label="Navegação principal">
+    <a href="#inicio">Início</a>
+    <a href="#oracoes">Orações</a>
+    <a href="#pregacoes">Pregações</a>
+    <a href="#esbocos">Esboços</a>
+    <a href="#mensagens">Mensagens</a>
+    <a href="#pedido-oracao">Pedido de oração</a>
+  </nav>
+
+  <main>
+    <section class="banner" id="inicio">
+      <h2>Há esperança para você</h2>
+      <p>Se o seu coração está cansado e você está passando por lutas ou momentos difíceis, saiba que não está sozinho. Há um Deus que ouve, acolhe e permanece ao seu lado.</p>
+      <a class="botao" href="#mensagens">Receba uma palavra</a>
+    </section>
+
+    <section class="container" aria-labelledby="acolhimento">
+      <h2 class="titulo" id="acolhimento">Um lugar de acolhimento</h2>
+      <div class="cartoes">
+        <article class="cartao">
+          <h3>🙏 Orações</h3>
+          <p>Palavras de oração para fortalecer a fé, renovar as forças e buscar a presença de Deus.</p>
+          <a class="botao" href="#oracoes">Ver oração</a>
+        </article>
+        <article class="cartao">
+          <h3>📖 Pregações</h3>
+          <p>Mensagens bíblicas com reflexão, ensinamentos e aplicação para a vida cristã.</p>
+          <a class="botao" href="#pregacoes">Ler pregação</a>
+        </article>
+        <article class="cartao">
+          <h3>📝 Esboços</h3>
+          <p>Esboços organizados para estudo e preparação de mensagens da Palavra.</p>
+          <a class="botao" href="#esbocos">Ver esboço</a>
+        </article>
+        <article class="cartao">
+          <h3>💌 Mensagens</h3>
+          <p>Uma palavra de fé e esperança para os momentos em que o coração precisa de consolo.</p>
+          <a class="botao" href="#mensagens">Ler mensagem</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="secao" id="oracoes">
+      <div class="container">
+        <h2 class="titulo">Orações</h2>
+        <article class="conteudo-texto">
+          <h3>Senhor, renova minhas forças</h3>
+          <p>Senhor meu Deus e meu Pai,</p>
+          <p>Nesta hora, venho à Tua presença pedir que visites cada coração que está sofrendo, cada pessoa que chora em silêncio e cada alma que já não encontra forças para continuar.</p>
+          <p>Pai, existem batalhas que ninguém conhece, lágrimas que ninguém vê e dores que muitas vezes não conseguimos expressar em palavras. Mas Tu conheces cada coração e sabes exatamente aquilo que cada pessoa está enfrentando.</p>
+          <p>Senhor, visita os enfermos, fortalece os abatidos, consola os que perderam alguém que amavam e renova a esperança daqueles que pensam em desistir.</p>
+          <p>Que a Tua presença alcance os lares, que a Tua Palavra ilumine os caminhos e que a Tua paz seja maior do que qualquer aflição.</p>
+          <p>Ensina-nos a confiar mesmo quando não entendemos os Teus caminhos. Não permitas que as dificuldades apaguem a nossa fé.</p>
+          <p>Em nome de Jesus Cristo, amém.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="secao" id="pregacoes">
+      <div class="container">
+        <h2 class="titulo">Pregações</h2>
+        <article class="conteudo-texto">
+          <h3>Deus não abandona quem está passando pela tempestade</h3>
+          <p><strong>Texto bíblico: Marcos 4:35-41</strong></p>
+          <h4>Introdução</h4>
+          <p>Existem momentos na vida em que parece que tudo está desmoronando. As lutas chegam, os problemas se acumulam e, muitas vezes, o coração fica cansado. Até mesmo quem tem fé enfrenta dias difíceis.</p>
+          <p>Em Marcos 4, encontramos os discípulos enfrentando uma grande tempestade enquanto estavam no barco com Jesus. O vento soprava forte, as ondas entravam no barco e os discípulos ficaram com medo. Mas Jesus estava com eles.</p>
+          <h4>1. A presença de Jesus não significa ausência de tempestades</h4>
+          <p>Os discípulos estavam com Jesus no barco, mas mesmo assim enfrentaram uma tempestade. Seguir a Cristo não significa viver sem dificuldades. A diferença é que não enfrentamos as tempestades sozinhos.</p>
+          <h4>2. O silêncio de Deus não significa abandono</h4>
+          <p>Enquanto a tempestade acontecia, Jesus estava dormindo. Os discípulos ficaram desesperados. Quantas vezes também pensamos que Deus não está ouvindo? O silêncio não significa que Ele deixou de cuidar de nós.</p>
+          <h4>3. Jesus tem autoridade sobre aquilo que nos assusta</h4>
+          <p>Jesus se levantou, repreendeu o vento e o mar se aquietou. Aquilo que era impossível para os discípulos estava debaixo da autoridade de Cristo.</p>
+          <h4>4. A tempestade também pode fortalecer a nossa fé</h4>
+          <p>A caminhada com Deus também é um aprendizado. Cada dificuldade pode nos ensinar a confiar mais e a reconhecer que Jesus continua sendo Senhor em todas as circunstâncias.</p>
+          <h4>Conclusão</h4>
+          <p>Talvez você esteja enfrentando uma tempestade que ninguém conhece. Não perca a esperança. O mesmo Jesus que estava no barco com os discípulos continua poderoso para sustentar você.</p>
+          <p><strong>Mensagem final:</strong> Não desista no meio da tempestade. Se Jesus está no barco, existe esperança. Continue confiando no Senhor.</p>
+          <p><strong>Oração:</strong> Senhor, fortalece aqueles que estão enfrentando dias difíceis. Ensina-nos a confiar em Ti mesmo quando as ondas se levantam. Em nome de Jesus. Amém.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="secao" id="esbocos">
+      <div class="container">
+        <h2 class="titulo">Esboços de Pregação</h2>
+        <article class="conteudo-texto">
+          <h3>Quando Deus está no controle, até a tempestade tem limite</h3>
+          <p><strong>Texto bíblico:</strong> Marcos 4:35-41</p>
+          <h4>Introdução</h4>
+          <p>Os discípulos estavam no barco com Jesus quando uma grande tempestade se levantou. O vento era forte, as ondas entravam no barco e todos ficaram desesperados. Mas Jesus estava ali.</p>
+          <h4>1. A tempestade não significa que Deus nos abandonou</h4>
+          <ul>
+            <li>Os discípulos estavam obedecendo à direção de Jesus.</li>
+            <li>Mesmo estando com Cristo, enfrentaram uma grande tempestade.</li>
+            <li>Nem toda dificuldade significa que estamos fora da vontade de Deus.</li>
+          </ul>
+          <h4>2. O silêncio de Jesus não significa que Ele perdeu o controle</h4>
+          <ul>
+            <li>Enquanto os discípulos estavam desesperados, Jesus dormia.</li>
+            <li>Eles pensaram que seriam vencidos pela tempestade.</li>
+            <li>Deus continua sendo Deus mesmo quando não entendemos o que acontece.</li>
+          </ul>
+          <h4>3. Jesus tem autoridade sobre aquilo que não podemos controlar</h4>
+          <ul>
+            <li>Jesus se levantou e repreendeu o vento.</li>
+            <li>O mar se aquietou diante da Sua autoridade.</li>
+            <li>Aquilo que era impossível para os discípulos estava debaixo do poder de Cristo.</li>
+          </ul>
+          <h4>4. A fé precisa ser maior que o nosso medo</h4>
+          <ul>
+            <li>Jesus questionou o medo dos discípulos.</li>
+            <li>A tempestade revelou a fragilidade da fé deles.</li>
+            <li>A confiança em Deus precisa permanecer mesmo nos dias difíceis.</li>
+          </ul>
+          <h4>Conclusão</h4>
+          <p>A tempestade pode ser grande, o vento pode ser forte e o barco pode parecer que vai afundar. Mas quem está com Jesus não está sozinho.</p>
+          <p><strong>Frase final:</strong> “Quem tem Jesus no barco pode até enfrentar tempestades, mas nunca estará sozinho no meio delas.”</p>
+          <p><strong>Oração:</strong> Senhor, fortalece a nossa fé nos dias difíceis. Ensina-nos a confiar em Ti mesmo quando os ventos são contrários. Em nome de Jesus. Amém.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="secao" id="mensagens">
+      <div class="container">
+        <h2 class="titulo">Mensagens da Palavra</h2>
+        <article class="conteudo-texto">
+          <h3>Deus está perto de quem tem o coração quebrantado</h3>
+          <p><strong>Texto bíblico: Salmos 34:18</strong></p>
+          <p class="versiculo">“Perto está o Senhor dos que têm o coração quebrantado e salva os contritos de espírito.”</p>
+          <h4>Reflexão da Palavra</h4>
+          <p>Existem dores que não conseguimos explicar. Existem lágrimas que derramamos em silêncio e batalhas que enfrentamos sem que ninguém perceba. Muitas vezes, as pessoas não entendem o que estamos passando, mas Deus conhece profundamente o nosso coração.</p>
+          <p>O Salmo 34 nos ensina que Deus não se afasta de quem está sofrendo. A Palavra afirma que o Senhor está perto daqueles que têm o coração quebrantado.</p>
+          <h4>O que aprendemos com essa passagem?</h4>
+          <ul>
+            <li><strong>Deus conhece a nossa dor:</strong> nada está escondido diante do Senhor.</li>
+            <li><strong>Deus se aproxima dos que sofrem:</strong> Ele oferece consolo e sustento aos corações feridos.</li>
+            <li><strong>Deus nos chama a manter a esperança:</strong> podemos encontrar força para continuar confiando no Senhor.</li>
+          </ul>
+          <h4>Aplicação para a nossa vida</h4>
+          <p>Talvez você esteja enfrentando uma situação difícil. Não permita que a demora faça você acreditar que Deus se esqueceu de você. Continue buscando a presença do Senhor. Ele conhece cada detalhe da sua luta.</p>
+          <h4>Conclusão</h4>
+          <p>O Senhor conhece suas lágrimas, ouve suas orações e sabe exatamente do que você precisa. Permaneça firme na fé, porque a presença de Deus é sustento para os dias difíceis.</p>
+          <p><strong>Oração:</strong> Senhor meu Deus, visita os corações feridos e fortalece aqueles que estão cansados. Traz consolo aos que choram e esperança aos desanimados. Em nome de Jesus. Amém.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container">
+      <p class="versiculo">“Lançando sobre ele toda a vossa ansiedade, porque ele tem cuidado de vós.”<br><strong>1 Pedro 5:7</strong></p>
+    </section>
+
+    <section class="secao" id="pedido-oracao">
+      <div class="container">
+        <h2 class="titulo">Deixe seu pedido de oração ou mensagem</h2>
+        <form class="formulario" id="formPedido">
+          <h3>Queremos orar por você</h3>
+          <p>Escreva seu pedido de oração, compartilhe uma mensagem ou conte como podemos orar por você.</p>
+          <label for="nome">Seu nome (opcional)</label>
+          <input id="nome" name="nome" type="text" maxlength="80" placeholder="Como podemos chamar você?">
+          <label for="tipo">O que deseja enviar?</label>
+          <select id="tipo" name="tipo">
+            <option value="Pedido de oração">Pedido de oração</option>
+            <option value="Mensagem">Mensagem</option>
+            <option value="Testemunho">Testemunho</option>
+          </select>
+          <label for="mensagem">Escreva sua mensagem</label>
+          <textarea id="mensagem" name="mensagem" maxlength="2000" required placeholder="Digite aqui seu pedido ou mensagem..."></textarea>
+          <button class="botao" type="submit">Enviar mensagem</button>
+          <p class="aviso">Sua mensagem é pessoal. Evite informar senhas, documentos ou dados bancários.</p>
+          <p class="aviso" id="retorno" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <h2>Refúgio da Palavra</h2>
+    <p>Um espaço de fé, acolhimento e esperança.</p>
+    <p>Que a Palavra de Deus alcance corações.</p>
+    <p>© 2026 Refúgio da Palavra</p>
+  </footer>
+
+  <script>
+    // Antes de publicar, coloque aqui o número de WhatsApp que receberá as mensagens.
+    // Use código do país + DDD + número, somente números. Exemplo: 5511999999999.
+    const WHATSAPP_DO_SITE = "";
+
+    document.getElementById("formPedido").addEventListener("submit", function (evento) {
+      evento.preventDefault();
+
+      const nome = document.getElementById("nome").value.trim() || "Não informado";
+      const tipo = document.getElementById("tipo").value;
+      const mensagem = document.getElementById("mensagem").value.trim();
+      const retorno = document.getElementById("retorno");
+
+      if (!mensagem) {
+        retorno.textContent = "Por favor, escreva sua mensagem antes de enviar.";
+        return;
+      }
+
+      if (!WHATSAPP_DO_SITE) {
+        retorno.textContent = "O formulário está pronto, mas o responsável pelo site ainda precisa configurar o número de WhatsApp para receber as mensagens.";
+        return;
+      }
+
+      const texto = `Olá! Vim pelo site Refúgio da Palavra.%0A%0ANome: ${encodeURIComponent(nome)}%0AAssunto: ${encodeURIComponent(tipo)}%0AMensagem: ${encodeURIComponent(mensagem)}`;
+      window.open(`https://wa.me/${WHATSAPP_DO_SITE}?text=${texto}`, "_blank", "noopener");
+      retorno.textContent = "O WhatsApp foi aberto para você confirmar o envio da mensagem.";
+    });
+  </script>
+</body>
+</html>
